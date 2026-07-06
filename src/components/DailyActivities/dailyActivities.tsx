@@ -35,7 +35,7 @@ function DailyActivities() {
   const yTicks = kilogramScale.ticks(5);
 
   return (
-    <div className="DailyActivities bg-grey-100 mt-8">
+    <div className="DailyActivities bg-grey-100">
       <div className="d-flex justify-space-between align-center px-4 py-2">
         <p className="text-xs">Activité quotidienne</p>
         <div className="d-flex align-center gap-2">
