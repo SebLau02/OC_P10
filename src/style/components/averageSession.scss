@@ -1,0 +1,51 @@
+@use "../abstract/variables" as *;
+
+.AverageSession {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 100%;
+    background-color: $primary-text;
+    opacity: 0.1;
+  }
+
+  &__line {
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 2;
+  }
+
+  &__overlay {
+    fill: rgba(255, 255, 255, 0.1);
+  }
+
+  &__dot {
+    fill: $light;
+  }
+
+  &__dot-halo {
+    fill: rgba(255, 255, 255, 0.3);
+  }
+
+  &__tooltip {
+    fill: $light;
+  }
+
+  &__tooltip-text {
+    fill: $grey-700;
+    font-size: 10px;
+  }
+
+  &__day-label {
+    fill: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+
+    &--active {
+      fill: $light;
+    }
+  }
+}

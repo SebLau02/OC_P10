@@ -1,4 +1,4 @@
-import { DailyActivities, StatsCard } from "../../components";
+import { AverageSession, DailyActivities, StatsCard } from "../../components";
 import MainNav from "../../components/MainNav/mainNav";
 import { useUserContext } from "../../contexts/userContext";
 import Glucide from "../../assets/carbs.png";
@@ -81,7 +81,9 @@ function Profile() {
               />
             ))}
           </div>
-          <DailyActivities />
+          <div className="d-flex flex-row gap-4">
+            <AverageSession />
+          </div>
         </div>
       </main>
     </MainNav>

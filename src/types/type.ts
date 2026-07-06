@@ -36,3 +36,15 @@ export type GetUserActivityBase = {
     sessions: ActivitySession[];
   };
 };
+
+export type AverageSession = {
+  data: {
+    userId: number;
+    sessions: Session[];
+  };
+};
+
+export type Session = {
+  day: number;
+  sessionLength: number;
+};
