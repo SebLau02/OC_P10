@@ -59,6 +59,9 @@ $autos: auto;
   .ml-#{$display} {
     margin-left: $display;
   }
+  .mt-#{$display} {
+    margin-top: $display;
+  }
 }
 
 $displays: block, inline, inline-block, flex, inline-flex, grid, none;

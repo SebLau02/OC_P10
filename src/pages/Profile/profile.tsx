@@ -42,7 +42,7 @@ function Profile() {
 
   return (
     <MainNav>
-      <main className="p-14">
+      <main className="px-14 py-8">
         <h1 className="text-xxl">
           Bonjour{" "}
           <span className="text-primary">
