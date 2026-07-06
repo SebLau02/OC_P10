@@ -1,0 +1,59 @@
+@use "../abstract/variables" as *;
+
+.DailyActivities {
+  border-radius: 0.5rem;
+
+  &__bar--weight {
+    fill: $grey-800;
+  }
+  &__bar--calories {
+    fill: $primary-main;
+  }
+  &__gridline {
+    stroke: $grey-700;
+    stroke-dasharray: 3;
+  }
+  &__axis-label {
+    fill: $grey-700;
+    font-size: 12px;
+  }
+  &__bar-group {
+    cursor: pointer;
+
+    &__highlight {
+      fill: $grey-200;
+      display: none;
+    }
+
+    &__group-details {
+      display: none;
+
+      &__background {
+        fill: $primary-main;
+      }
+      &__text {
+        fill: $light;
+        font-size: 10px;
+      }
+    }
+
+    &:hover &__highlight,
+    &:hover &__group-details {
+      display: block;
+    }
+  }
+}
+
+.Legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  &--weight {
+    background-color: $grey-800;
+  }
+  &--calories {
+    background-color: $primary-main;
+  }
+}

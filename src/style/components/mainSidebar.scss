@@ -1,0 +1,17 @@
+@use "../abstract/variables.scss" as *;
+
+.Main-sidebar {
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    width: 64px;
+    background-color: $light;
+    border-radius: 0.25rem;
+  }
+  &__copyright {
+    transform: rotate(-90deg) translateX(50%);
+    white-space: nowrap;
+  }
+}

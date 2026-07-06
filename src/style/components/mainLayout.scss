@@ -1,0 +1,10 @@
+.Main-layout {
+  display: grid;
+  grid-template-columns: 117px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
+  .Main-nav {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+}
