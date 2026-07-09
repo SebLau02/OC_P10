@@ -48,3 +48,16 @@ export type Session = {
   day: number;
   sessionLength: number;
 };
+
+export type Performance = {
+  data: {
+    userId: number;
+    data: KindData[];
+    kind: { [key: string]: string };
+  };
+};
+
+export type KindData = {
+  value: number;
+  kind: number;
+};

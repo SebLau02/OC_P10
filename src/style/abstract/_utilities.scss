@@ -40,6 +40,17 @@
 .bg-grey-100 {
   background-color: $grey-100;
 }
+.bg-grey-800 {
+  background-color: $grey-800;
+}
+
+.stroke-primary {
+  stroke: $primary-main;
+}
+.fill-primary {
+  fill: $primary-main;
+}
+
 .w-full {
   width: 100%;
 }
@@ -151,5 +162,11 @@ $decorations: none, underline, overline, line-through;
   }
   .mb-#{$i} {
     margin-bottom: #{$i * 0.5}rem;
+  }
+}
+
+@for $i from 1 through 20 {
+  .opacity-#{$i * 10} {
+    opacity: #{$i / 10};
   }
 }
