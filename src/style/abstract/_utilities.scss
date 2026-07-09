@@ -50,6 +50,9 @@
 .fill-primary {
   fill: $primary-main;
 }
+.fill-light {
+  fill: $light;
+}
 
 .w-full {
   width: 100%;
@@ -75,6 +78,12 @@ $autos: auto;
   }
 }
 
+$textTransform: capitalize, uppercase, lowercase;
+@each $prop in $textTransform {
+  .#{$prop} {
+    text-transform: $prop;
+  }
+}
 $displays: block, inline, inline-block, flex, inline-flex, grid, none;
 @each $display in $displays {
   .d-#{$display} {

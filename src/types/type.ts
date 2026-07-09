@@ -53,7 +53,7 @@ export type Performance = {
   data: {
     userId: number;
     data: KindData[];
-    kind: { [key: string]: string };
+    kind: { [key: number]: string };
   };
 };
 
