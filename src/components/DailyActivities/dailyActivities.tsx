@@ -37,15 +37,15 @@ function DailyActivities() {
   return (
     <div className="DailyActivities bg-grey-100">
       <div className="d-flex justify-space-between align-center px-4 py-2">
-        <p className="text-xs">Activité quotidienne</p>
+        <p className="text-sm text-grey-850">Activité quotidienne</p>
         <div className="d-flex align-center gap-2">
           <div className="d-flex align-center gap-1">
             <span className="Legend-dot Legend-dot--weight" />
-            <p className="text-sm text-grey-700">Poids (kg)</p>
+            <p className="text-xs text-grey-700">Poids (kg)</p>
           </div>
           <div className="d-flex align-center gap-1">
             <span className="Legend-dot Legend-dot--calories" />
-            <p className="text-sm text-grey-700">Calories brûlées (kCal)</p>
+            <p className="text-xs text-grey-700">Calories brûlées (kCal)</p>
           </div>
         </div>
       </div>

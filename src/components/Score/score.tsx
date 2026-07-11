@@ -22,10 +22,10 @@ function Score() {
         borderRadius: "5px",
         position: "relative",
       }}
-      className="d-flex justify-center align-center"
+      className="d-flex justify-center align-center bg-grey-100"
     >
       <p
-        className="text-sm"
+        className="text-sm text-grey-850"
         style={{
           position: "absolute",
           top: 30,
@@ -46,7 +46,7 @@ function Score() {
         }}
       >
         <span
-          className="text-xl"
+          className="text-xl text-grey-800"
           style={{
             fontWeight: 700,
             fontSize: "26px",

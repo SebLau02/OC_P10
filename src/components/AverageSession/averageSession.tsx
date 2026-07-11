@@ -99,7 +99,7 @@ function AverageSession() {
                 x={20}
                 y={16}
                 textAnchor="middle"
-                className="AverageSession__tooltip-text"
+                className="AverageSession__tooltip-text text-primary-text"
               >
                 {hoveredSession.sessionLength} min
               </text>

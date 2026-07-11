@@ -18,12 +18,12 @@ function StatsCard({ stat }: Props) {
         }}
       />
       <div>
-        <strong className="text-l">
+        <strong className="text-l text-grey-800">
           {stat.value}
           {stat.extension}
         </strong>
         <p
-          className="text-xs"
+          className="text-xs text-grey-700"
           style={{
             lineHeight: 1.5,
           }}

@@ -25,11 +25,20 @@
 .text-light {
   color: $light;
 }
+.text-primary-text {
+  color: $primary-text;
+}
+.text-grey-800 {
+  color: $grey-800;
+}
 .text-primary {
   color: $primary-main;
 }
 .text-grey-700 {
   color: $grey-700;
+}
+.text-grey-850 {
+  color: $grey-850;
 }
 .bg-primary {
   background-color: $primary-main;
@@ -42,6 +51,9 @@
 }
 .bg-grey-800 {
   background-color: $grey-800;
+}
+.bg-grey-600 {
+  background-color: $grey-600;
 }
 
 .stroke-primary {
