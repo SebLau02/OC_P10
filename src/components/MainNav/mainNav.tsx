@@ -43,7 +43,7 @@ const SPORTS = [
 
 function MainNav({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="Main-layout">
+    <div className={`Main-layout`}>
       <nav className="d-flex flex-row align-center px-3 py-2 bg-dark Main-nav">
         <a href="/" className="">
           <img src={Logo} alt="Logo" />
@@ -60,13 +60,13 @@ function MainNav({ children }: { children?: React.ReactNode }) {
           ))}
         </div>
       </nav>
-      <div className="bg-dark Main-sidebar d-flex justify-center align-center flex-column py-4">
+      <div className="bg-dark Main-sidebar d-flex justify-center align-center flex-column py-4 h-full">
         <div className="d-flex justify-center align-center flex-column gap-2 mt-auto">
           {SPORTS.map((sport, i) => (
             <a
               key={i}
               href={sport.href}
-              className="Main-sidebar__link Button-base"
+              className="Button-base Main-sidebar__link"
             >
               <img src={sport.label} />
             </a>

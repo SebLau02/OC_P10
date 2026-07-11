@@ -1,5 +1,17 @@
+@use "../abstract/variables" as *;
+
 .Button-base {
   position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem 0.5rem;
+
+  &.Button-Outlined {
+    border: 1px solid $primary-main;
+    color: $primary-main;
+    border-radius: 4px;
+    background-color: transparent;
+  }
 
   &:hover {
     filter: brightness(0.9);

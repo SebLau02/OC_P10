@@ -48,7 +48,12 @@ function Profile() {
 
   return (
     <MainNav>
-      <main className="px-14 py-8">
+      <main
+        className="py-8 mx-auto"
+        style={{
+          maxWidth: "1126px",
+        }}
+      >
         <h1 className="text-xxl">
           Bonjour{" "}
           <span className="text-primary">
@@ -59,9 +64,9 @@ function Profile() {
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
         <div
+          id="Stats-section"
           className="d-grid gap-4 mt-8"
           style={{
-            gridTemplateColumns: "3fr 1fr",
             gridTemplateRows: "auto auto",
           }}
         >
@@ -70,7 +75,8 @@ function Profile() {
             style={{
               gridRow: "span 2",
             }}
-            className="d-flex flex-column gap-4"
+            className="d-flex gap-4"
+            id="Stats-cards"
           >
             {STATS.map((stat) => (
               <StatsCard

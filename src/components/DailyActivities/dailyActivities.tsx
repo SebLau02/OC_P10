@@ -50,8 +50,8 @@ function DailyActivities() {
         </div>
       </div>
       <svg
-        width={chartWidth + MARGIN.left + MARGIN.right}
-        height={CHART_HEIGHT + MARGIN.top + MARGIN.bottom}
+        viewBox={`0 0 ${chartWidth + MARGIN.left + MARGIN.right} ${CHART_HEIGHT + MARGIN.top + MARGIN.bottom}`}
+        style={{ width: "100%", height: "auto" }}
       >
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
           {yTicks.map((tick) => (
