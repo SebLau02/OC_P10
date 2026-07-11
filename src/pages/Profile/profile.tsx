@@ -2,6 +2,7 @@ import {
   AverageSession,
   DailyActivities,
   Performance,
+  Score,
   StatsCard,
 } from "../../components";
 import MainNav from "../../components/MainNav/mainNav";
@@ -89,6 +90,7 @@ function Profile() {
           <div className="d-flex flex-row gap-4">
             <AverageSession />
             <Performance />
+            <Score />
           </div>
         </div>
       </main>
