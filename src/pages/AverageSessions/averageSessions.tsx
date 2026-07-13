@@ -3,7 +3,7 @@ import { AverageSession } from "../../components";
 function AverageSessions() {
   return (
     <main
-      className="py-8 mx-auto"
+      className="pt-8 pb-2 mx-auto"
       style={{
         maxWidth: "1126px",
         width: "100%",
