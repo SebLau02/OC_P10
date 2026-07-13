@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import UserContext from "./contexts/userContext";
-import { Profile, Activity } from "./pages";
+import { Profile, Activity, AverageSessions } from "./pages";
 import { Suspense, useState } from "react";
 import type { GetUserBase } from "./types/type";
 import { UserLayout } from "./components";
@@ -15,7 +15,7 @@ function App() {
           <Route path="/user/:id" element={<UserLayout />}>
             <Route index element={<Profile />} />
             <Route path="activity" element={<Activity />} />
-            <Route path="average-sessions" element={<Activity />} />
+            <Route path="average-sessions" element={<AverageSessions />} />
           </Route>
         </Routes>
       </Suspense>
