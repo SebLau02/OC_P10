@@ -5,10 +5,10 @@ import { useUser } from "../../hooks/useUser";
 import MainNav from "../MainNav/mainNav";
 
 function UserLayout() {
-  const { user_id } = useParams();
+  const { id } = useParams();
   const { setUser } = useUserContext();
 
-  const { data: user } = useUser(Number(user_id));
+  const { data: user } = useUser(Number(id));
 
   useEffect(() => {
     if (user) setUser(user.data);

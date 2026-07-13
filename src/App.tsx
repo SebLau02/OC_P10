@@ -12,9 +12,10 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <Suspense fallback={<>Loading...</>}>
         <Routes>
-          <Route path="/user/:user_id" element={<UserLayout />}>
+          <Route path="/user/:id" element={<UserLayout />}>
             <Route index element={<Profile />} />
             <Route path="activity" element={<Activity />} />
+            <Route path="average-sessions" element={<Activity />} />
           </Route>
         </Routes>
       </Suspense>
