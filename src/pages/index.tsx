@@ -7,5 +7,6 @@ const AverageSessions = lazy(
 );
 const PerformancePage = lazy(() => import("./Performance/performance.tsx"));
 const Macros = lazy(() => import("./Macros/macros.tsx"));
+const Goals = lazy(() => import("./Goals/goals.tsx"));
 
-export { Profile, Activity, AverageSessions, PerformancePage, Macros };
+export { Profile, Activity, AverageSessions, PerformancePage, Goals, Macros };

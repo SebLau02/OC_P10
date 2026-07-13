@@ -6,6 +6,7 @@ import {
   AverageSessions,
   PerformancePage,
   Macros,
+  Goals,
 } from "./pages";
 import { Suspense, useState } from "react";
 import type { GetUserBase } from "./types/type";
@@ -24,6 +25,7 @@ function App() {
             <Route path="average-sessions" element={<AverageSessions />} />
             <Route path="performance" element={<PerformancePage />} />
             <Route path="macros" element={<Macros />} />
+            <Route path="goals" element={<Goals />} />
           </Route>
         </Routes>
       </Suspense>
