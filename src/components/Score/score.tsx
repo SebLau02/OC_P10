@@ -8,7 +8,7 @@ function Score() {
 
   if (!user) return <div>Loading...</div>;
 
-  const { todayScore } = user.data ?? { todayScore: 0 };
+  const { todayScore } = user ?? { todayScore: 0 };
 
   const RADIUS = 70;
   const CIRCUMFERENCE = 2 * Math.PI * RADIUS;

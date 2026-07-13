@@ -5,7 +5,6 @@ import {
   Score,
   StatsCard,
 } from "../../components";
-import MainNav from "../../components/MainNav/mainNav";
 import { useUserContext } from "../../contexts/userContext";
 import Glucide from "../../assets/carbs.png";
 import Protein from "../../assets/protein.png";
@@ -47,60 +46,56 @@ function Profile() {
   const { user } = useUserContext();
 
   return (
-    <MainNav>
-      <main
-        className="py-8 mx-auto"
+    <main
+      className="py-8 mx-auto"
+      style={{
+        maxWidth: "1126px",
+      }}
+    >
+      <h1 className="text-xxl">
+        Bonjour{" "}
+        <span className="text-primary">{user?.userInfos?.firstName}</span>
+      </h1>
+      <p className="text-md mt-3">
+        Félicitation ! Vous avez explosé vos objectifs hier 👏
+      </p>
+      <div
+        id="Stats-section"
+        className="d-grid gap-4 mt-8"
         style={{
-          maxWidth: "1126px",
+          gridTemplateRows: "auto auto",
         }}
       >
-        <h1 className="text-xxl">
-          Bonjour{" "}
-          <span className="text-primary">
-            {user?.data?.userInfos?.firstName}
-          </span>
-        </h1>
-        <p className="text-md mt-3">
-          Félicitation ! Vous avez explosé vos objectifs hier 👏
-        </p>
+        <DailyActivities />
         <div
-          id="Stats-section"
-          className="d-grid gap-4 mt-8"
           style={{
-            gridTemplateRows: "auto auto",
+            gridRow: "span 2",
           }}
+          className="d-flex gap-4"
+          id="Stats-cards"
         >
-          <DailyActivities />
-          <div
-            style={{
-              gridRow: "span 2",
-            }}
-            className="d-flex gap-4"
-            id="Stats-cards"
-          >
-            {STATS.map((stat) => (
-              <StatsCard
-                key={stat.key}
-                stat={{
-                  icon: stat.icon,
-                  label: stat.label,
-                  extension: stat.extension,
-                  value:
-                    user?.data?.keyData?.[
-                      stat.key as keyof typeof user.data.keyData
-                    ]?.toString() ?? "0",
-                }}
-              />
-            ))}
-          </div>
-          <div className="d-flex flex-row gap-4">
-            <AverageSession />
-            <Performance />
-            <Score />
-          </div>
+          {STATS.map((stat) => (
+            <StatsCard
+              key={stat.key}
+              stat={{
+                icon: stat.icon,
+                label: stat.label,
+                extension: stat.extension,
+                value:
+                  user?.keyData?.[
+                    stat.key as keyof typeof user.keyData
+                  ]?.toString() ?? "0",
+              }}
+            />
+          ))}
         </div>
-      </main>
-    </MainNav>
+        <div className="d-flex flex-row gap-4">
+          <AverageSession />
+          <Performance />
+          <Score />
+        </div>
+      </div>
+    </main>
   );
 }
 

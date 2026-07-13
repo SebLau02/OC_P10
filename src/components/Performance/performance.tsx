@@ -19,7 +19,7 @@ const CARD_HEIGHT = 263;
 
 function Performance() {
   const { user } = useUserContext();
-  const { data } = useGetUserPerformance(user?.data.id ?? 0);
+  const { data } = useGetUserPerformance(user?.id ?? 0);
 
   if (!data) return <div>Loading...</div>;
 

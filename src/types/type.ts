@@ -1,10 +1,11 @@
+export type ApiResBase<T> = {
+  data: T;
+};
 export type GetUserBase = {
-  data: {
-    id: number;
-    keyData: KeyDataBase;
-    todayScore: number;
-    userInfos: UserBase;
-  };
+  id: number;
+  keyData: KeyDataBase;
+  todayScore: number;
+  userInfos: UserBase;
 };
 
 export type KeyDataBase = {
@@ -21,7 +22,7 @@ export type UserBase = {
 
 export type UserContextType = {
   user: GetUserBase | null;
-  setUser: (user: GetUserBase | null) => void;
+  setUser: React.Dispatch<React.SetStateAction<GetUserBase | null>>;
 };
 
 export type ActivitySession = {

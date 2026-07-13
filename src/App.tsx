@@ -1,17 +1,23 @@
+import { Route, Routes } from "react-router-dom";
 import UserContext from "./contexts/userContext";
-import { useUser } from "./hooks/useUser";
-import Profile from "./pages";
+import { Profile, Activity } from "./pages";
+import { Suspense, useState } from "react";
+import type { GetUserBase } from "./types/type";
+import { UserLayout } from "./components";
 
 function App() {
-  const { data: user } = useUser(12);
-
-  if (!user) {
-    return <>Utilisateur non trouvé</>;
-  }
+  const [user, setUser] = useState<GetUserBase | null>(null);
 
   return (
-    <UserContext.Provider value={{ user, setUser: () => {} }}>
-      <Profile />
+    <UserContext.Provider value={{ user, setUser }}>
+      <Suspense fallback={<>Loading...</>}>
+        <Routes>
+          <Route path="/user/:user_id" element={<UserLayout />}>
+            <Route index element={<Profile />} />
+            <Route path="activity" element={<Activity />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </UserContext.Provider>
   );
 }

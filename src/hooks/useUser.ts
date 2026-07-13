@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { getUser } from "../fetches/user";
-import type { GetUserBase } from "../types/type";
+import type { ApiResBase, GetUserBase } from "../types/type";
 
 export const useUser = (id: number) => {
   const [requestedId, setRequestedId] = useState(id);
-  const [data, setData] = useState<GetUserBase | null>(null);
+  const [data, setData] = useState<ApiResBase<GetUserBase> | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
   if (id !== requestedId) {

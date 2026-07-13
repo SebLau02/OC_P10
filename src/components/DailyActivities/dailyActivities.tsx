@@ -13,7 +13,7 @@ const BAR_RADIUS = 3;
 function DailyActivities() {
   const { user } = useUserContext();
 
-  const { data, isLoading, error } = useUserActivity(user?.data?.id ?? 0);
+  const { data, isLoading, error } = useUserActivity(user?.id ?? 0);
 
   if (isLoading) return <div>Chargement...</div>;
   if (error || !data) return <div>Erreur lors du chargement de l'activité</div>;

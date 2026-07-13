@@ -12,7 +12,7 @@ const DAY_LABELS = ["L", "M", "M", "J", "V", "S", "D"];
 
 function AverageSession() {
   const { user } = useUserContext();
-  const { data } = useUserAverageActivity(user?.data?.id ?? 0);
+  const { data } = useUserAverageActivity(user?.id ?? 0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const { sessions } = data?.data ?? { sessions: [] };
