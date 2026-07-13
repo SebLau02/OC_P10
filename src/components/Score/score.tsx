@@ -70,8 +70,7 @@ function Score() {
           cy="80"
           r={RADIUS}
           strokeWidth="10"
-          fill="transparent"
-          className="stroke-primary"
+          className="stroke-primary fill-light"
           strokeDasharray={`${dashLength} ${CIRCUMFERENCE}`}
           strokeLinecap="round"
           style={{ transform: "rotate(-90deg)", transformOrigin: "50% 50%" }}
