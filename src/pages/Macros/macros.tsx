@@ -13,6 +13,11 @@ function Macros() {
         width: "100%",
       }}
     >
+      <h1 className="text-xxl mb-4">
+        Répartition macronutriments de{" "}
+        <span className="text-primary">{user?.userInfos?.firstName}</span>
+      </h1>
+
       <div
         style={{
           gridRow: "span 2",
