@@ -3,6 +3,11 @@
 .DailyActivities {
   border-radius: 0.5rem;
 
+  &__chart-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
   &__bar--weight {
     fill: $grey-800;
   }
