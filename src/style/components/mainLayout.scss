@@ -12,6 +12,9 @@
 
   #Stats-section {
     grid-template-columns: 1fr;
+    > * {
+      min-width: 0;
+    }
     #Stats-cards {
       flex-direction: row;
     }
