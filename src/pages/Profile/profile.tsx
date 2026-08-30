@@ -10,8 +10,6 @@ import Glucide from "../../assets/carbs.png";
 import Protein from "../../assets/protein.png";
 import Fat from "../../assets/fat.png";
 import Calories from "../../assets/calories.png";
-import { Link } from "react-router-dom";
-
 const STATS = [
   {
     href: "",
@@ -67,9 +65,7 @@ function Profile() {
           gridTemplateRows: "auto auto",
         }}
       >
-        <Link to="activity" className="none">
-          <DailyActivities />
-        </Link>
+        <DailyActivities />
 
         <div
           style={{
@@ -79,31 +75,24 @@ function Profile() {
           id="Stats-cards"
         >
           {STATS.map((stat) => (
-            <Link key={stat.key} to="macros" className="none">
-              <StatsCard
-                stat={{
-                  icon: stat.icon,
-                  label: stat.label,
-                  extension: stat.extension,
-                  value:
-                    user?.keyData?.[
-                      stat.key as keyof typeof user.keyData
-                    ]?.toString() ?? "0",
-                }}
-              />{" "}
-            </Link>
+            <StatsCard
+              key={stat.key}
+              stat={{
+                icon: stat.icon,
+                label: stat.label,
+                extension: stat.extension,
+                value:
+                  user?.keyData?.[
+                    stat.key as keyof typeof user.keyData
+                  ]?.toString() ?? "0",
+              }}
+            />
           ))}
         </div>
         <div className="d-flex flex-row gap-4">
-          <Link to="average-sessions" className="none">
-            <AverageSession />
-          </Link>
-          <Link to="performance" className="none">
-            <Performance />
-          </Link>
-          <Link to="goals" className="none">
-            <Score />
-          </Link>
+          <AverageSession />
+          <Performance />
+          <Score />
         </div>
       </div>
     </main>
