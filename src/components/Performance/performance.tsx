@@ -2,7 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import { useUserContext } from "../../contexts/userContext";
 import { useGetUserPerformance } from "../../hooks/useUserPerformance";
 import { curveLinearClosed, lineRadial, pointRadial } from "d3-shape";
-import { DICTIONNAIRE } from "../../config/constants";
+import { DICTIONNAIRE, PERFORMANCE_ORDER } from "../../config/constants";
 
 const WIDTH = 180;
 
@@ -15,13 +15,11 @@ function Performance() {
 
   if (!data) return <div>Loading...</div>;
 
-  const { kind, data: performanceData } = data?.data ?? { kind: {}, data: [] };
+  const { data: performanceData } = data?.data ?? { data: [] };
 
   if (!performanceData) return <div>Loading...</div>;
 
-  const result: number[] = performanceData
-    .sort((a, b) => a.kind - b.kind)
-    .map((item) => item.value);
+  const result: number[] = performanceData.map((item) => item.value);
 
   const maxValue: number = Math.max(...result);
 
@@ -60,8 +58,9 @@ function Performance() {
                     textAnchor={anchor}
                     className="text-xxs fill-light"
                   >
-                    {DICTIONNAIRE[kind[i + 1] as keyof typeof DICTIONNAIRE] ??
-                      kind[i + 1]}
+                    {DICTIONNAIRE[
+                      PERFORMANCE_ORDER[i] as keyof typeof DICTIONNAIRE
+                    ] ?? PERFORMANCE_ORDER[i]}
                   </text>
                 );
               })()}

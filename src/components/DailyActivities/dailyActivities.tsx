@@ -75,7 +75,7 @@ function DailyActivities() {
 
             {sessions.map((session, i) => (
               <g
-                key={session.day}
+                key={i}
                 transform={`translate(${i * CHART_WIDTH_PER_DAY}, 0)`}
                 className="DailyActivities__bar-group"
               >

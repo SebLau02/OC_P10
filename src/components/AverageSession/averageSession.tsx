@@ -109,7 +109,7 @@ function AverageSession() {
 
         {sessions.map((session, i) => (
           <text
-            key={session.day}
+            key={i}
             x={xScale(session.day) ?? 0}
             y={HEIGHT - 16}
             textAnchor="middle"
@@ -123,7 +123,7 @@ function AverageSession() {
 
         {sessions.map((session, i) => (
           <rect
-            key={session.day}
+            key={i}
             x={(xScale(session.day) ?? 0) - WIDTH / sessions.length / 2}
             y={0}
             width={WIDTH / sessions.length}
