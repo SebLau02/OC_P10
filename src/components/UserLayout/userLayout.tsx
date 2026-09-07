@@ -11,10 +11,8 @@ function UserLayout() {
   const { data: user } = useUser(Number(id));
 
   useEffect(() => {
-    if (user) {
-      console.log(user);
-      setUser(user.data);
-    }
+    if (user) setUser(user.data);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
