@@ -10,7 +10,7 @@ export const getUser = async ({ id }: { id: number }) => {
     const data = await response.json();
     return data;
   } catch (err) {
-    console.error(err);
+    console.log(err);
     throw err;
   }
 };

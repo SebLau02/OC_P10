@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Performance } from "../types/type";
 import { getUserPerformance } from "../fetches/performance";
+import { performanceSerializer } from "../serializer/performanceSerializer";
 
 export const useGetUserPerformance = (id: number) => {
   const [requestedId, setRequestedId] = useState(id);
@@ -14,7 +15,9 @@ export const useGetUserPerformance = (id: number) => {
   }
 
   useEffect(() => {
-    getUserPerformance({ id }).then(setData).catch(setError);
+    getUserPerformance({ id })
+      .then((data) => setData({ data: performanceSerializer(data) }))
+      .catch(setError);
   }, [id]);
 
   const isLoading = data === null && error === null;

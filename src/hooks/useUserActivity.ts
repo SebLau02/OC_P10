@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUserActivity } from "../fetches/activity";
 import type { GetUserActivityBase } from "../types/type";
+import { activitySerializer } from "../serializer/activitySerializer";
 
 export const useUserActivity = (id: number) => {
   const [requestedId, setRequestedId] = useState(id);
@@ -14,7 +15,11 @@ export const useUserActivity = (id: number) => {
   }
 
   useEffect(() => {
-    getUserActivity({ id }).then(setData).catch(setError);
+    getUserActivity({ id })
+      .then((data) => {
+        setData({ data: activitySerializer(data) });
+      })
+      .catch(setError);
   }, [id]);
 
   const isLoading = data === null && error === null;

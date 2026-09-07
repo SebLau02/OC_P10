@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUserAverageActivity } from "../fetches/average";
 import type { AverageSession } from "../types/type";
+import { averageSessionSerializer } from "../serializer/averageSessionSerializer";
 
 export const useUserAverageActivity = (id: number) => {
   const [requestedId, setRequestedId] = useState(id);
@@ -14,7 +15,9 @@ export const useUserAverageActivity = (id: number) => {
   }
 
   useEffect(() => {
-    getUserAverageActivity({ id }).then(setData).catch(setError);
+    getUserAverageActivity({ id })
+      .then((data) => setData({ data: averageSessionSerializer(data) }))
+      .catch(setError);
   }, [id]);
 
   const isLoading = data === null && error === null;
