@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUser } from "../fetches/user";
 import type { ApiResBase, GetUserBase } from "../types/type";
-import { userSerializer } from "../lib/userSerializer";
+import { userSerializer } from "../serializer/userSerializer";
 
 export const useUser = (id: number) => {
   const [requestedId, setRequestedId] = useState(id);
