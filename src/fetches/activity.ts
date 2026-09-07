@@ -8,7 +8,6 @@ export const getUserActivity = async ({ id }: { id: number }) => {
       throw new Error("Erreur lors de la récupération de l'activité");
     }
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (err) {
     console.error(err);
