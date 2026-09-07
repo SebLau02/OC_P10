@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": 99,
+    "keyData": {
+      "calorieCount": 1500,
+      "proteinCount": 90,
+      "carbohydrateCount": 200
+    },
+    "userInfos": {
+      "firstName": "Cassé"
+    }
+  }
+}

@@ -2,17 +2,9 @@ import { Fragment } from "react/jsx-runtime";
 import { useUserContext } from "../../contexts/userContext";
 import { useGetUserPerformance } from "../../hooks/useUserPerformance";
 import { curveLinearClosed, lineRadial, pointRadial } from "d3-shape";
+import { DICTIONNAIRE } from "../../config/constants";
 
 const WIDTH = 180;
-
-const DICTIONNAIRE = {
-  cardio: "Cardio",
-  energy: "Energie",
-  endurance: "Endurance",
-  strength: "Force",
-  speed: "Vitesse",
-  intensity: "Intensité",
-};
 
 const CARD_WIDTH = 258;
 const CARD_HEIGHT = 263;

@@ -1,0 +1,11 @@
+{
+  "data": {
+    "userId": 99,
+    "data": [
+      { "value": 80, "kind": 1 },
+      { "kind": 2 },
+      { "value": 140 },
+      {}
+    ]
+  }
+}
