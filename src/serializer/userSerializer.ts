@@ -6,7 +6,7 @@ export const userSerializer = (user: GetUserBase) => {
   return {
     id: user.id,
     keyData: keyDataSerializer(user.keyData),
-    todayScore: user.todayScore ?? 0,
+    todayScore: user.todayScore ?? user.score ?? 0,
     userInfos: userInfosSerializer(user.userInfos),
   };
 };

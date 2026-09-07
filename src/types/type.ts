@@ -5,6 +5,7 @@ export type GetUserBase = {
   id: number;
   keyData: KeyDataBase;
   todayScore: number;
+  score?: number;
   userInfos: UserBase;
 };
 
