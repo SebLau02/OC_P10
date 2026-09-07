@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUser } from "../fetches/user";
 import type { ApiResBase, GetUserBase } from "../types/type";
+import { userSerializer } from "../lib/userSerializer";
 
 export const useUser = (id: number) => {
   const [requestedId, setRequestedId] = useState(id);
@@ -14,7 +15,9 @@ export const useUser = (id: number) => {
   }
 
   useEffect(() => {
-    getUser({ id }).then(setData).catch(setError);
+    getUser({ id })
+      .then((data) => setData({ data: userSerializer(data.data) }))
+      .catch(setError);
   }, [id]);
 
   const isLoading = data === null && error === null;
